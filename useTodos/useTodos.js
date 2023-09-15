@@ -1,5 +1,5 @@
 import { useReducer, useEffect } from 'react';
-import { todoReducer } from '../08-useReducer';
+import { todoReducer } from './todoReducer';
 
 const init = () => {
   return JSON.parse( localStorage.getItem('todos') ) ?? [];
@@ -45,10 +45,10 @@ export const useTodos = () => {
 
   return {
     todos,
+    todosCount,
+    pendingTodosCount,
     handleNewTodo,
     handleRemoveTodo,
     handleToggleTodo,
-    todosCount,
-    pendingTodosCount,
   }
 }
